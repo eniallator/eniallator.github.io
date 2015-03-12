@@ -1,6 +1,17 @@
 $(document).ready(function () {
-
+	
 	function getRidingBlock(userCommand){
+		// If user enters bad/empty input, DON'T LET IT BREAK lol
+		if(userCommand === ""){
+			userCommand = "say Missing input.";
+		}
+		var cmdType = typeof userCommand;
+		cmdType = cmdType.toString();
+		if(cmdType !== "string"){
+			// It's not a string! :O
+			userCommand = "say Bad input: " + userCommand;
+		}
+		
 		return ",Riding:{id:FallingSand,Time:1,Block:command_block,TileEntityData:{Command:" + userCommand + "}";
 	}
 
