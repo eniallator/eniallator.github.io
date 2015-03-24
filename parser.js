@@ -1,12 +1,10 @@
-$(document).ready(function () {
-
+(function(){	
 	function getRidingBlock(userCommand){
 		return ",Riding:{id:FallingSand,Time:1,Block:command_block,TileEntityData:{Command:" + userCommand + "}";
 	}
 
-	function parseCommands(inputCommandsEl, outputCommandEl){
+	CommandGenerator.parseCommands = function parseCommands(inputCommandsValue){
 		var prefix = "summon FallingSand ~ ~1 ~ {Time:1";
-		var inputCommandsValue = inputCommandsEl.value;
 		var arrayCommands = inputCommandsValue.split("\n").reverse();
 		var numberFillBlocks = arrayCommands.length + 1;
 		var outputCommand = "";
@@ -25,12 +23,6 @@ $(document).ready(function () {
 		}
 
 		$('.outputContainer').removeClass("hidden");
-
-		outputCommandEl.value = outputCommand;
-	}
-
-	$(".js-generate").on( "click", function() {
-	  parseCommands(inputCommands, outputCommand);
-	});
-
-});
+		$("#outputCommand").val(outputCommand);
+	};
+})();
