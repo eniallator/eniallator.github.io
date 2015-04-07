@@ -1,4 +1,6 @@
 (function(){	
+	var SCROLL_SPEED = 1000;
+
 	function getRidingBlock(userCommand){
 		return ",Riding:{id:FallingSand,Time:1,Block:command_block,TileEntityData:{Command:" + userCommand + "}";
 	}
@@ -24,5 +26,8 @@
 
 		$('.outputContainer').removeClass("hidden");
 		$("#outputCommand").val(outputCommand);
+		$('body').animate({
+			scrollTop: $(".outputContainer").offset().top
+		}, SCROLL_SPEED);
 	};
 })();
