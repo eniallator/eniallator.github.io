@@ -10,4 +10,6 @@ $(document).ready(function () {
 		$(".js-file-input").click();
 	});
 
+	$(".copy-button").tooltip();
+
 });
