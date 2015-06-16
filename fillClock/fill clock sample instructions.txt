@@ -1,0 +1,74 @@
+tellraw @a {text:"[@: Setting up command blocks...]",color:gray,italic:true}
+gamerule commandBlockOutput false
+gamerule logAdminCommands false
+setblock ~-2 ~-3 ~ command_block 0 0 {Command:fill ~ ~1 ~ ~-14 ~1 ~ air}
+setblock ~-2 ~-2 ~ command_block 0 0 {Command:fill ~ ~-1 ~ ~-14 ~-1 ~ redstone_block}
+setblock ~-2 ~-4 ~ redstone_block
+setblock ~-2 ~-5 ~-1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ playsound mob.irongolem.death @a[r=5] ~ ~ ~ 2 1.5}
+setblock ~-2 ~-6 ~1 command_block 0 0 {Command:scoreboard players set @e[type=ArmorStand,score_endGame_min=0,score_endGame=0] rotate 0}
+setblock ~-3 ~-8 ~ command_block 0 0 {Command:kill @e[type=ArmorStand,score_Dummy_min=1]}
+setblock ~-3 ~-7 ~ command_block 0 0 {Command:execute @e[type=ArmorStand] ~ ~ ~ detect ~ ~-1 ~ dragon_egg 0 scoreboard players set @e[type=ArmorStand,c=1] Dummy 1}
+setblock ~-3 ~-9 ~-1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_endGame_min=0,score_rotate=0] ~ ~ ~ scoreboard players set @e[type=Item,r=2] netherStars 1 {Item:{id:minecraft:nether_star,Count:1b}}}
+setblock ~-3 ~-10 ~1 command_block 0 0 {Command:scoreboard players set @e[type=ArmorStand,score_rotate_min=450] endGame 0}
+setblock ~-4 ~-12 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_endGame_min=0] ~ ~ ~ detect ~ ~-1 ~ dragon_egg 0 setblock ~ ~-1 ~ quartz_block 1}
+setblock ~-4 ~-11 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ particle largesmoke ~ ~ ~ 0 0 0 0.04 30}
+setblock ~-4 ~-13 ~-1 command_block 0 0 {Command:kill @e[type=Item,score_netherStars_min=1,c=1]}
+setblock ~-4 ~-14 ~1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_rotate_min=450] ~ ~ ~ tellraw @p {text:"You have unlocked the ability to fly!",color:green,italic:true}}
+setblock ~-5 ~-16 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~ ~-1.281 ~ {Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:dragon_egg}]}}
+setblock ~-5 ~-15 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ scoreboard players set @e[type=ArmorStand,r=2] endGame 0}
+setblock ~-5 ~-17 ~-1 command_block 0 0 {Command:execute @e[type=Item,score_netherStars_min=1] ~ ~ ~ scoreboard players add @e[type=ArmorStand,score_endGame_min=0,c=1] endGame 1}
+setblock ~-5 ~-18 ~1 command_block 0 0 {Command:execute @e[type=Item,score_netherStars_min=1] ~ ~ ~ tellraw @a[r=10] {score:{name:"starCount",objective:"counter"},color:red,extra:[{text:"/5 nether stars have been added!",color:red}]}}
+setblock ~-6 ~-20 ~ command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=100] ~ ~ ~ ~2 ~}
+setblock ~-6 ~-19 ~ command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=1] ~ ~ ~ ~2 ~}
+setblock ~-6 ~-21 ~-1 command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=50] ~ ~ ~ ~2 ~}
+setblock ~-6 ~-22 ~1 command_block 0 0 {Command:scoreboard players add @e[type=ArmorStand,score_endGame_min=5] rotate 1}
+setblock ~-7 ~-24 ~ command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=250] ~ ~ ~ ~4 ~}
+setblock ~-7 ~-23 ~ command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=150] ~ ~ ~ ~3 ~}
+setblock ~-7 ~-25 ~-1 command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=200] ~ ~ ~ ~4 ~}
+setblock ~-7 ~-26 ~1 command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=300] ~ ~ ~ ~2 ~}
+setblock ~-8 ~-28 ~ command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=400] ~ ~ ~ ~10 ~}
+setblock ~-8 ~-27 ~ command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=300] ~ ~ ~ ~5 ~}
+setblock ~-8 ~-29 ~-1 command_block 0 0 {Command:tp @e[type=ArmorStand,score_rotate_min=350] ~ ~ ~ ~6 ~}
+setblock ~-8 ~-30 ~1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_rotate_min=449] ~ ~ ~ scoreboard players set @p maps 4}
+setblock ~-9 ~-32 ~ command_block 0 0 {Command:execute @a[score_maps_min=0] ~ ~ ~ kill @e[type=ThrownExpBottle,r=5]}
+setblock ~-9 ~-31 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_rotate_min=449] ~ ~2 ~ particle hugeexplosion ~ ~ ~ 0 0 0 0 1}
+setblock ~-9 ~-33 ~-1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_rotate_min=449] ~ ~ ~ playsound random.explode @a[r=20] ~ ~ ~ 2 1.1}
+setblock ~-9 ~-34 ~1 command_block 0 0 {Command:scoreboard players set @e[type=ArmorStand,score_rotate_min=450] rotate 0}
+setblock ~-10 ~-36 ~ command_block 0 0 {Command:execute @a[score_carpet_min=1] ~ ~ ~ fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 barrier 0 replace air}
+setblock ~-10 ~-35 ~ command_block 0 0 {Command:give @a[score_maps_min=4,score_maps=4] experience_bottle 1 0 {display:{Name:"Flying Carpet: Currently Deactivated",Lore:[to activate throw the experience bottle!]}}}
+setblock ~-10 ~-37 ~-1 command_block 0 0 {Command:scoreboard players set @a[score_maps_min=3,score_maps=3] carpet 1}
+setblock ~-10 ~-38 ~1 command_block 0 0 {Command:scoreboard players set @a[score_maps_min=4] maps 1}
+setblock ~-11 ~-40 ~ command_block 0 0 {Command:execute @a[score_carpet_min=1] ~ ~ ~ fill ~-3 ~-4 ~-3 ~3 ~2 ~3 air 0 replace barrier}
+setblock ~-11 ~-39 ~ command_block 0 0 {Command:give @a[score_maps_min=2,score_maps=2] experience_bottle 1 0 {display:{Name:"Flying Carpet: Currently Activated",Lore:[to deactivate throw the experience bottle!]}}}
+setblock ~-11 ~-41 ~-1 command_block 0 0 {Command:scoreboard players set @a[score_maps_min=1,score_maps=1] carpet 0}
+setblock ~-11 ~-42 ~1 command_block 0 0 {Command:scoreboard players set @a[score_maps_min=2,score_maps=2] maps 3}
+setblock ~-12 ~-44 ~ command_block 0 0 {Command:execute @e[type=ThrownExpBottle] ~ ~-1 ~ scoreboard players add @p[score_maps_min=0,r=5] maps 1}
+setblock ~-12 ~-43 ~ command_block 0 0 {Command:clear @a[score_maps_min=2,score_maps=2] experience_bottle}
+setblock ~-12 ~-45 ~-1 command_block 0 0 {Command:execute @e[type=ThrownExpBottle] ~ ~ ~ particle smoke ~ ~ ~ 0 0 0 0.05 20}
+setblock ~-12 ~-46 ~1 command_block 0 0 {Command:clear @a[score_maps_min=4] experience_bottle}
+setblock ~-13 ~-48 ~ command_block 0 0 {Command:scoreboard players operation starCount counter = @e[type=ArmorStand,score_endGame_min=0] endGame}
+setblock ~-13 ~-47 ~ command_block 0 0 {Command:scoreboard players add starCount counter 1}
+setblock ~-13 ~-49 ~-1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_rotate_min=449] ~ ~ ~ execute @p ~ ~ ~ tellraw @a[rm=1] {text:"[",color:gray,italic:true,extra:[{selector:"@p",color:gray,italic:true,extra:[{text:": has unlocked the ability to fly!]",color:gray,italic:true}]}]}}
+setblock ~-13 ~-50 ~1 command_block 0 0 {Command:execute @e[type=ThrownExpBottle] ~ ~ ~ effect @p[score_maps_min=1,score_maps=1] 11 1 255 true}
+setblock ~-14 ~-52 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~-1 ~-1 ~ nether_brick_stairs}
+setblock ~-14 ~-51 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~1 ~-1 ~ nether_brick_stairs 1}
+setblock ~-14 ~-53 ~-1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~ ~-1 ~-1 nether_brick_stairs 2}
+setblock ~-14 ~-54 ~1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~ ~-1 ~1 nether_brick_stairs 3}
+setblock ~-15 ~-56 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~1 ~-1 ~1 stone_slab 7}
+setblock ~-15 ~-55 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~1 ~-1 ~-1 stone_slab 7}
+setblock ~-15 ~-57 ~-1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~-1 ~-1 ~1 stone_slab 7}
+setblock ~-15 ~-58 ~1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~-1 ~-1 ~-1 stone_slab 7}
+setblock ~-16 ~-60 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~-0.6563 ~-2.0004 ~-0.6563 {CustomName:"Nether_brick",Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:nether_brick}]}}
+setblock ~-16 ~-59 ~ command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~-0.6563 ~-2.0004 ~0.7186 {CustomName:"Nether_brick",Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:nether_brick}]}}
+setblock ~-16 ~-61 ~-1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~0.7186 ~-2.0004 ~-0.6563 {CustomName:"Nether_brick",Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:nether_brick}]}}
+setblock ~-16 ~-62 ~1 command_block 0 0 {Command:execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~0.7186 ~-2.0004 ~0.7186 {CustomName:"Nether_brick",Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:nether_brick}]}}
+tellraw @a {text:"[@: Finished placing command blocks, now on to scoreboards...]",color:gray,italic:true}
+scoreboard objectives add endGame dummy
+scoreboard objectives add rotate dummy
+scoreboard objectives add maps dummy
+scoreboard objectives add carpet dummy
+scoreboard objectives add netherStars dummy
+scoreboard objectives add Dummy dummy
+scoreboard objectives add counter dummy
+scoreboard players set starCount counter 0
+tellraw @a {text:"[@: Command block setup complete!]",color:gray,italic:true}

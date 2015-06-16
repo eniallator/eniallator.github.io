@@ -1,0 +1,58 @@
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ playsound mob.irongolem.death @a[r=5] ~ ~ ~ 2 1.5
+scoreboard players set @e[type=ArmorStand,score_endGame_min=0,score_endGame=0] rotate 0
+kill @e[type=ArmorStand,score_Dummy_min=1]
+execute @e[type=ArmorStand] ~ ~ ~ detect ~ ~-1 ~ dragon_egg 0 scoreboard players set @e[type=ArmorStand,c=1] Dummy 1
+execute @e[type=ArmorStand,score_endGame_min=0,score_rotate=0] ~ ~ ~ scoreboard players set @e[type=Item,r=2] netherStars 1 {Item:{id:minecraft:nether_star,Count:1b}}
+scoreboard players set @e[type=ArmorStand,score_rotate_min=450] endGame 0
+execute @e[type=ArmorStand,score_endGame_min=0] ~ ~ ~ detect ~ ~-1 ~ dragon_egg 0 setblock ~ ~-1 ~ quartz_block 1
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ particle largesmoke ~ ~ ~ 0 0 0 0.04 30
+kill @e[type=Item,score_netherStars_min=1,c=1]
+execute @e[type=ArmorStand,score_rotate_min=450] ~ ~ ~ tellraw @p {text:"You have unlocked the ability to fly!",color:green,italic:true}
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~ ~-1.281 ~ {Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:dragon_egg}]}
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ scoreboard players set @e[type=ArmorStand,r=2] endGame 0
+execute @e[type=Item,score_netherStars_min=1] ~ ~ ~ scoreboard players add @e[type=ArmorStand,score_endGame_min=0,c=1] endGame 1
+execute @e[type=Item,score_netherStars_min=1] ~ ~ ~ tellraw @a[r=10] {score:{name:"starCount",objective:"counter"},color:red,extra:[{text:"/5 nether stars have been added!",color:red}]}
+tp @e[type=ArmorStand,score_rotate_min=100] ~ ~ ~ ~2 ~
+tp @e[type=ArmorStand,score_rotate_min=1] ~ ~ ~ ~2 ~
+tp @e[type=ArmorStand,score_rotate_min=50] ~ ~ ~ ~2 ~
+scoreboard players add @e[type=ArmorStand,score_endGame_min=5] rotate 1
+tp @e[type=ArmorStand,score_rotate_min=250] ~ ~ ~ ~4 ~
+tp @e[type=ArmorStand,score_rotate_min=150] ~ ~ ~ ~3 ~
+tp @e[type=ArmorStand,score_rotate_min=200] ~ ~ ~ ~4 ~
+tp @e[type=ArmorStand,score_rotate_min=300] ~ ~ ~ ~2 ~
+tp @e[type=ArmorStand,score_rotate_min=400] ~ ~ ~ ~10 ~
+tp @e[type=ArmorStand,score_rotate_min=300] ~ ~ ~ ~5 ~
+tp @e[type=ArmorStand,score_rotate_min=350] ~ ~ ~ ~6 ~
+execute @e[type=ArmorStand,score_rotate_min=449] ~ ~ ~ scoreboard players set @p maps 4
+execute @a[score_maps_min=0] ~ ~ ~ kill @e[type=ThrownExpBottle,r=5]
+execute @e[type=ArmorStand,score_rotate_min=449] ~ ~2 ~ particle hugeexplosion ~ ~ ~ 0 0 0 0 1
+execute @e[type=ArmorStand,score_rotate_min=449] ~ ~ ~ playsound random.explode @a[r=20] ~ ~ ~ 2 1.1
+scoreboard players set @e[type=ArmorStand,score_rotate_min=450] rotate 0
+execute @a[score_carpet_min=1] ~ ~ ~ fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 barrier 0 replace air
+give @a[score_maps_min=4,score_maps=4] experience_bottle 1 0 {display:{Name:"Flying Carpet: Currently Deactivated",Lore:[to activate throw the experience bottle!]}}
+scoreboard players set @a[score_maps_min=3,score_maps=3] carpet 1
+scoreboard players set @a[score_maps_min=4] maps 1
+execute @a[score_carpet_min=1] ~ ~ ~ fill ~-3 ~-4 ~-3 ~3 ~2 ~3 air 0 replace barrier
+give @a[score_maps_min=2,score_maps=2] experience_bottle 1 0 {display:{Name:"Flying Carpet: Currently Activated",Lore:[to deactivate throw the experience bottle!]}}
+scoreboard players set @a[score_maps_min=1,score_maps=1] carpet 0
+scoreboard players set @a[score_maps_min=2,score_maps=2] maps 3
+execute @e[type=ThrownExpBottle] ~ ~-1 ~ scoreboard players add @p[score_maps_min=0,r=5] maps 1
+clear @a[score_maps_min=2,score_maps=2] experience_bottle
+execute @e[type=ThrownExpBottle] ~ ~ ~ particle smoke ~ ~ ~ 0 0 0 0.05 20
+clear @a[score_maps_min=4] experience_bottle
+scoreboard players operation starCount counter = @e[type=ArmorStand,score_endGame_min=0] endGame
+scoreboard players add starCount counter 1
+execute @e[type=ArmorStand,score_rotate_min=449] ~ ~ ~ execute @p ~ ~ ~ tellraw @a[rm=1] {text:"[",color:gray,italic:true,extra:[{selector:"@p",color:gray,italic:true,extra:[{text:": has unlocked the ability to fly!]",color:gray,italic:true}]}]}
+execute @e[type=ThrownExpBottle] ~ ~ ~ effect @p[score_maps_min=1,score_maps=1] 11 1 255 true
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~-1 ~-1 ~ nether_brick_stairs
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~1 ~-1 ~ nether_brick_stairs 1
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~ ~-1 ~-1 nether_brick_stairs 2
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~ ~-1 ~1 nether_brick_stairs 3
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~1 ~-1 ~1 stone_slab 7
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~1 ~-1 ~-1 stone_slab 7
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~-1 ~-1 ~1 stone_slab 7
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ setblock ~-1 ~-1 ~-1 stone_slab 7
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~-0.6563 ~-2.0004 ~-0.6563 {CustomName:"Nether_brick",Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:nether_brick}]}
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~-0.6563 ~-2.0004 ~0.7186 {CustomName:"Nether_brick",Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:nether_brick}]}
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~0.7186 ~-2.0004 ~-0.6563 {CustomName:"Nether_brick",Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:nether_brick}]}
+execute @e[type=ArmorStand,score_Dummy_min=1] ~ ~ ~ summon ArmorStand ~0.7186 ~-2.0004 ~0.7186 {CustomName:"Nether_brick",Invisible:1,NoGravity:1,DisabledSlots:2039552,Equipment:[{},{},{},{},{id:nether_brick}]}
