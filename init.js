@@ -8,7 +8,7 @@ $(document).ready(function() {
 		$('.outputContainer').removeClass("hidden");
 
 		$('body').animate({
-			scrollTop: $(".outputContainer").offset().top
+			scrollTop: $(".outputContainer").offset().top - 45
 		}, SCROLL_SPEED);
 	}
 
