@@ -15,7 +15,10 @@ body {
   background-color: #eee;
 }
 
-textarea.vert { resize:vertical; }
+textarea.input { 
+  resize:vertical;
+  white-space: nowrap;
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
