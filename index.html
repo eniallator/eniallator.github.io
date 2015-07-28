@@ -30,14 +30,25 @@
       <p class="lead">This generates a single output command from multiple input commands. Use the text box below or choose a file containing input commands.</p>
 
       <div class="betterTextBox">
-        <textarea class="input" placeholder="Put your input commands in here, 1 line per command" rows="13" style="width:100%" id="inputCommands"></textarea>
+        <span>Mode:</span>
+        <select class="js-command-mode command-mode">
+          <option value="singleUse" class="selected">Single-use</option>
+          <option value="fillClock">Fill-clock</option>
+        </select>
+        <div class="js-single-use-input">
+          <textarea class="vert" placeholder="Put your input commands in here, 1 line per command" rows="13" style="width:100%" id="inputCommands"></textarea>
+        </div>
+        <div class="hidden js-fill-clock-input">
+          <textarea class="vert" placeholder="Put your starting commands in here, 1 line per command" rows="5" style="width:100%" id="startFillClockCommands"></textarea>
+          <textarea class="vert" placeholder="Put your fill clock commands in here, 1 line per command" rows="10" style="width:100%" id="fillClockCommands"></textarea>
+          <textarea class="vert" placeholder="Put your ending commands in here, 1 line per command" rows="5" style="width:100%" id="endFillClockCommands"></textarea>
       </div>
 
       <div class="row controls">
         <p>
           <a class="btn btn-lg btn-success js-generate" href="#" role="button">Generate</a>
-          <a class="btn btn-lg btn-success js-file-upload hidden" href="#" role="button">File Upload</a>
-          <input class="js-file-input" type="file"></input>
+          <a class="btn btn-lg btn-success js-file-upload" href="#" role="button">File Upload</a>
+          <input class="js-file-input hidden" type="file"></input>
         </p>
       </div>
 
@@ -61,6 +72,7 @@
       window.CommandGenerator = {};
     </script>
     <script src="parser.js"></script>
+    <script src="fillClockParser.js"></script>
     <script src="fileUploader.js"></script>
     <script src="init.js"></script>
   </body>
