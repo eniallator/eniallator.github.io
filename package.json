@@ -4,8 +4,11 @@
   "description": "A first attempt at a website!",
   "main": "main.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "browserify --transform browserify-hogan lib/main.js -o build/bundle.js",
     "watch": "watchify -v --transform browserify-hogan lib/main.js -o build/bundle.js",
+=======
+>>>>>>> added browserify
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,8 +22,14 @@
   },
   "homepage": "https://github.com/eniallator/eniallator.github.io",
   "dependencies": {
+<<<<<<< HEAD
     "browserify": "^11.0.1",
     "browserify-hogan": "^0.3.0",
     "hogan.js": "~2.0.0"
   }
 }
+=======
+    "browserify": "^11.0.1"
+  }
+}
+>>>>>>> added browserify
