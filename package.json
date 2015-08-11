@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/eniallator/eniallator.github.io",
   "dependencies": {
-    "browserify": "^11.0.1"
+    "browserify": "^11.0.1",
+    "browserify-hogan": "^0.3.0",
+    "hogan.js": "~2.0.0"
   }
 }
