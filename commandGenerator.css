@@ -14,10 +14,10 @@ body {
   color: inherit;
   word-wrap: break-word;
   background-color: #eee;
-}
+  }
 
 textarea.input { 
-  resize:vertical;
+  resize: vertical;
   white-space: nowrap;
 }
 
