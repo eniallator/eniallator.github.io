@@ -1,26 +1,14 @@
-const http = require("http");
-const fs = require('fs');
+var express = require('express');
+var path = require("path");
+var app = express();
 
-const hostname = "127.0.0.1";
-const port = 3000;
+app.use(express.static("build"));
+app.use(express.static("css"));
 
-const server = http.createServer((req, res) => {
-  var fileName = "";
-
-  if (req.url === "/"){
-    fileName = "index.html"
-
-  } else if (req.url != "/favicon.ico"){
-    fileName = req.url.substring(1)
-  }
-
-  const readFileStream = fs.createReadStream(fileName);
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/html");
-
-  readFileStream.pipe(res);
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
-server.listen(port, hostname, ()=>{
-  console.log(`Server running at http://${hostname}:${port}/`)
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
 });
