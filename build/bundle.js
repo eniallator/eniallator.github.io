@@ -54,7 +54,7 @@
 	var mode = "singleUse";
 	var version = "1_8";
 
-	console.log('hello you');
+	// console.log("HELLO WORLD")
 
 	$(".js-generate").on("click", function(event) {
 		event.preventDefault();
