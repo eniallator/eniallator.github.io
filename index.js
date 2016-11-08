@@ -1,12 +1,13 @@
 var express = require('express');
 var path = require("path");
-var webpackMiddleware = require("webpack-dev-middleware");
-var webpackConfig = require("./webpack.config");
-var webpack = require("webpack");
 var app = express();
 var port = process.env.PORT || 3000;
 
 if ((process.env.NODE_ENV || 'development') === "development") {
+  var webpackMiddleware = require("webpack-dev-middleware");
+  var webpackConfig = require("./webpack.config");
+  var webpack = require("webpack");
+  
   app.use(webpackMiddleware(webpack(webpackConfig), {
     publicPath: "/build/"
   }));
