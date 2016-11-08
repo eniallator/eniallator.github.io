@@ -6,9 +6,11 @@ var webpack = require("webpack");
 var app = express();
 var port = process.env.PORT || 3000;
 
-app.use(webpackMiddleware(webpack(webpackConfig), {
-  publicPath: "/build/"
-}));
+if ((process.env.NODE_ENV || 'development') === "development") {
+  app.use(webpackMiddleware(webpack(webpackConfig), {
+    publicPath: "/build/"
+  }));
+}
 
 app.use(express.static("build"));
 app.use(express.static("css"));
