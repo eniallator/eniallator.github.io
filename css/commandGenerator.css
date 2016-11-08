@@ -37,7 +37,7 @@ body {
   background-color: #eee;
   }
 
-textarea.input { 
+textarea.input {
   resize: vertical;
   white-space: nowrap;
 }
