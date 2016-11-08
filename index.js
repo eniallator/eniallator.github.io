@@ -3,17 +3,17 @@ var path = require("path");
 var app = express();
 var port = process.env.PORT || 3000;
 
-if ((process.env.NODE_ENV || 'development') === "development") {
+if (process.env.npm_lifecycle_event === "dev") {
   var webpackMiddleware = require("webpack-dev-middleware");
   var webpackConfig = require("./webpack.config");
   var webpack = require("webpack");
-  
+
   app.use(webpackMiddleware(webpack(webpackConfig), {
     publicPath: "/build/"
   }));
 }
 
-app.use(express.static("build"));
+app.use("/build", express.static("build"));
 app.use(express.static("css"));
 
 app.get('/', function (req, res) {

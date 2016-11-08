@@ -1,3 +1,5 @@
+'use strict';
+
 const path = require("path")
 
 module.exports = {
@@ -5,7 +7,7 @@ module.exports = {
   entry: path.join(__dirname, "lib", "main.js"),
   output: {
     path: path.join(__dirname, "build"),
-    publicPath: "/build/",
+    publicPath: path.join(__dirname, "build"),
     filename: "bundle.js"
   },
   module: {

@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/build/";
+/******/ 	__webpack_require__.p = "C:\\Users\\niall\\OneDrive\\Documents\\Master Command Generator\\eniallator.github.io\\build";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -56,9 +56,9 @@
 	var mode = "singleUse";
 	var version = "1_8";
 
-	console.log("HELLO WORLD");
 
 	$(".js-generate").on("click", function(event) {
+		console.log("HELLO WORLD!!");
 		event.preventDefault();
 
 		var input;
