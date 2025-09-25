@@ -1,77 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>CMD GENERATOR</title>
+<head>
+  <meta http-equiv="refresh" content="0; url=https://cdrn.cc/" />
+</head>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <!-- Custom styles for this template -->
-    <link href="commandGenerator.css" rel="stylesheet">
+<body>
+  <a href="https://cdrn.cc/">My site</a>
+</body>
 
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="container">
-      <div class="header">
-        <h3 class="text-muted"><center>Minecraft Command Generator <small>- Made by <a href="http://youtube.com/user/en1allat0r">En1allat0r</a></small></center></h3>
-      </div>
-      <p class="lead">This generates a single output command from multiple input commands. Use the text box below or choose a file containing input commands.</p>
-
-      <div class="betterTextBox">
-        <span>Mode:</span>
-        <select class="js-command-mode">
-          <option value="singleUse" class="selected">Single-use</option>
-          <option value="fillClock">Fill-clock</option>
-        </select>
-        <span>Version:</span>
-        <select class="js-command-version">
-          <option value="1_8" class"selected">1.8</option>
-          <option value="1_9">1.9</option>
-        </select>
-        <div class="js-single-use-input">
-          <textarea class="input" placeholder="Put your input commands in here, 1 line per command" rows="13" style="width:100%" id="inputCommands"></textarea>
-        </div>
-        <div class="hidden js-fill-clock-input">
-          <textarea class="input" placeholder="Put your starting commands in here, 1 line per command" rows="5" style="width:100%" id="startFillClockCommands"></textarea>
-          <textarea class="input" placeholder="Put your fill clock commands in here, 1 line per command" rows="10" style="width:100%" id="fillClockCommands"></textarea>
-          <textarea class="input" placeholder="Put your ending commands in here, 1 line per command" rows="5" style="width:100%" id="endFillClockCommands"></textarea>
-      </div>
-
-      <div class="row controls">
-        <p>
-          <a class="btn btn-lg btn-success js-generate" href="#" role="button">Generate</a>
-          <a class="btn btn-lg btn-success js-file-upload" href="#" role="button">File Upload</a>
-          <input class="js-file-input hidden" type="file"></input>
-        </p>
-      </div>
-
-      <div class="betterTextBox hidden outputContainer">
-        <button data-clipboard-target="outputCommand" class="copy-button btn btn-default" data-toggle="tooltip" data-placement="right" title="Copy to clipboard">Copy</button>
-        <output id="outputCommand"></output>
-      </div>
-
-      <footer class="footer">
-        <p>&copy; eniallator 2015</p>
-      </footer>
-
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <script src="zeroclipboard/ZeroClipboard.js"></script>
-    <script src="zeroclipboard/initZeroClipboard.js"></script>
-    <script src="build/bundle.js"></script>
-  </body>
 </html>
